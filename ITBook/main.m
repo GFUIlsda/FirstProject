@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
     @autoreleasepool
     {
        //ITBook 
-  	 // Вводим новые пять книг со следующими характеристиками (согласно объявлеными ранее переменными в ITBook.h):
+		 // Вводим новые пять книг со следующими характеристиками (согласно объявлеными ранее переменными в ITBook.h):
         ITBook *theFirstBook = [[ITBook alloc] initWithTitle:@"Cocoa" author: @"Apple" year:2013 paperback:YES];
         ITBook *theSecondBook = [[[ITBook alloc] init] autorelease];
         ITBook *theThirdBook = [[ITBook alloc] initWithTitle:@"Focoa" author: @"Bapple" year:2011 paperback:YES];
@@ -77,12 +77,12 @@ int main(int argc, const char * argv[])
 	{
 		//Person
 		// Вводим новые три пользователя со следующими данными (согласно объявлеными ранее переменными в Person.h):
-		//ITBook *theFirstPerson = [[Person alloc] initWithFirstName:@"George" LastName: @"Soros"];
-		//ITBook *theThirdPerson = [[Person alloc] initWithFirstName:@"Warren" LastName: @"Buffett"];
+//		ITBook *theFirstPerson = [[Person alloc] initWithFirstName:@"George" LastName: @"Soros"];
+//		ITBook *theThirdPerson = [[Person alloc] initWithFirstName:@"Warren" LastName: @"Buffett"];
 		
-		//printf("Test Person: Short List - ok\n\n");
+		printf("Test Person: Short List - ok\n\n");
 		
-		//NSLog(@"\n%@\n%@", theFirstPerson.stringRepresentation, theThirdPerson.stringRepresentation);
+//		NSLog(@"\n%@\n%@", theFirstPerson.stringRepresentation, theThirdPerson.stringRepresentation);
 		
 	}
 	
