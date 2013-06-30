@@ -6,17 +6,18 @@
 //  Copyright (c) 2013 MacBook Air. All rights reserved.
 //
 
+// <challenge the directive #import, shall connect a type library that describes the use of COM interfaces>
 #import "ITBook.h"
 
-//НОВОЕ!!! Обявление констант
+// <ad constants is a good way to make these constants defined once for the whole app>
 static NSString *const sITBookDefaultTitle = @"Unknown";
 static NSString *const sITBookDefaultAuthor = @"No Name";
-//Закрытие НОВОГО
 
 NSString *const kITBookTitleKey = @"title";
 NSString *const kITBookAuthorKey = @"author";
 NSString *const kITBookYearKey = @"year";
 NSString *const kITBookPaperbackKey = @"paperback";
+
 
 @implementation ITBook
 
@@ -59,7 +60,7 @@ NSString *const kITBookPaperbackKey = @"paperback";
 
 - (id)initWithDictionaryRepresentation:(NSDictionary *)aDict
 {
-  self = [super init];
+	self = [super init];
 	if (self)
 	{
 		self.title = [aDict objectForKey:kITBookTitleKey];
