@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 MacBook Air. All rights reserved.
 //
 
+// <challenge the directive #import, shall connect a type library that describes the use of COM interfaces>
 #import "Person.h"
 
-//НОВОЕ!!! Обявление констант
+// <ad constants is a good way to make these constants defined once for the whole app>
 static NSString *const sPersonDefaultFirstName = @"No Name";
 static NSString *const sPersonDefaultLastName = @"No Name";
-//Закрытие НОВОГО
 
 NSString *const kPersonFirstNameKey = @"firstName";
 NSString *const kPersonLastNameKey = @"lastName";
@@ -26,7 +26,7 @@ NSString *const kPersonLastNameKey = @"lastName";
 
 - (id)initWithFirstName:(NSString *)aFirstName
 {
-  return [self initWithFirstName:aFirstName lastName:nil];
+	return [self initWithFirstName:aFirstName lastName:nil];
 }
 
 - (id)initWithFirstName:(NSString *)aFirstName lastName:(NSString *)aLastName
@@ -106,11 +106,11 @@ NSString *const kPersonLastNameKey = @"lastName";
 	return _lastName;
 }
 
-//#pragma mark -
+#pragma mark -
 
  - (NSString *)stringRepresentation
 {
-	//NSString * theCoverTypeStringRepresentahion = self.isPaperback ? @"Paperback": @"Hardcover";
+	NSString * theCoverTypeStringRepresentahion = self.isPaperback ? @"Paperback": @"Hardcover";
 	
 	return [NSString stringWithFormat:@"FirstName:%@. LastName:%@.", self.firstName, nil == self.lastName ? sPersonDefaultLastName : self.lastName];
 }
