@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 MacBook Air. All rights reserved.
 //
 
+// <challenge the directive #import, shall connect a type library that describes the use of COM interfaces>
 #import <Foundation/Foundation.h>
 
+// <creating a scripted class "ITBook" and ad parents class name "NSObject", you specify the class interface in an @interface...@end>
 @interface ITBook : NSObject
-// объявление переменных в проекте:
+
+// declaration of variables in the project member variable declarations:
 {
     NSString *_title;
     NSString *_author;
@@ -17,21 +20,20 @@
     BOOL _coverType;
 }
 
-// НОВОЕ!!!
+// <given the following class declaration>
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *author;
 @property (nonatomic, assign) NSInteger year;
 @property (nonatomic, assign, getter = isPaperback) BOOL paperback;
 @property (nonatomic, assign, getter = isHardcover) BOOL hardcover;
-// Закрытое НОВОЕ!!!
 
-// объявление методов обработки в проекте (не понятно почему так дублируем каждую новую строчку):
+// ad processing methods in the project:
 - (id)initWithTitle:(NSString *)aTitle;
 - (id)initWithTitle:(NSString *)aTitle author:(NSString *)anAuthor;
 - (id)initWithTitle:(NSString *)aTitle author:(NSString *)anAuthor year:(NSInteger)aYear;
 - (id)initWithTitle:(NSString *)aTitle author:(NSString *)anAuthor year:(NSInteger)aYear paperback:(BOOL)aCoverType;
 
-// не понятно для чего это:
+// <description of pointers to type of information>
 - (void)setTitle:(NSString *)aTitle;
 - (NSString *)title;
 - (void)setAuthor:(NSString *)anAuthor;
@@ -43,14 +45,13 @@
 - (void)setHardcover:(BOOL)isHardcover;
 - (BOOL)isHardcover;
 
-// --
+// <ad NSDictionary for need a convenient and efficient way to retrieve data associated with an arbitrary key>
 - (id)initWithDictionaryRepresentation:(NSDictionary *)aDict;
 - (NSDictionary *)dictionaryRepresentation;
-// --
 
 - (NSString *)stringRepresentation;
 
-// сортировка вводимых данных
+// sorting the input data:
 + (NSArray *)booksSortByTitleWithSet:(NSSet *)aBooks;
 + (NSArray *)booksSortByAuthorWithSet:(NSSet *)aBooks;
 + (NSArray *)booksSortByYearWithSet:(NSSet *)aBooks;
