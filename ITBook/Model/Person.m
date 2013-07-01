@@ -8,10 +8,7 @@
 
 // <challenge the directive #import, shall connect a type library that describes the use of COM interfaces>
 			#import "Person.h"
-
-// <ad constants is a good way to make these constants defined once for the whole app>
-			static NSString *const sPersonDefaultFirstName = @"No First Name";
-			static NSString *const sPersonDefaultLastName = @"No Last Name";
+#import "ITBook.h"
 
 			NSString *const kPersonFirstNameKey = @"firstName";
 			NSString *const kPersonLastNameKey = @"lastName";
@@ -31,7 +28,13 @@
 // ad method declararation for variable "lastName":
 			- (id)initWithFirstName:(NSString *)aFirstName lastName:(NSString *)aLastName
 						{
-								return [self initWithFirstName:aFirstName lastName:aLastName];
+								if (self = [super init])
+                                {
+                                    self.firstName = aFirstName;
+                                    self.lastName = aLastName;
+                                }
+                            
+                            return self;
 						}
 
 //the directive "#pragma mark" adds a new line to the "Function menu"
@@ -45,6 +48,7 @@
 								{
 										self.firstName = [aDict objectForKey:kPersonFirstNameKey];
 										self.lastName = [aDict objectForKey:kPersonLastNameKey];
+                                    [self.books addObjectsFromArray:[aDict objectForKey:@"books"]];
 								}
 	
 								return self;
@@ -55,11 +59,10 @@
 						{
 								NSMutableDictionary *theRepresentation = [NSMutableDictionary dictionary];
 	
-								if (nil != self.firstName || NO == [sPersonDefaultFirstName isEqualToString:self.firstName])
-								{
+                            if (nil != self.firstName)
+                            {
 										[theRepresentation setObject:self.firstName forKey:kPersonFirstNameKey];
-								}
-	
+                            }
 								if (nil != self.lastName)
 								{
 										[theRepresentation setObject:self.lastName forKey:kPersonLastNameKey];
@@ -74,6 +77,8 @@
 						{
 								[_firstName release];
 								[_lastName release];
+                            [_books makeObjectsPerformSelector:@selector(setPerson:) withObject:nil];
+                            [_books release];
 	
 								[super dealloc];
 						}
@@ -81,85 +86,35 @@
 // the directive "#pragma mark" adds a new line to the "Function menu"
 			#pragma mark -
 
-// ad method declararation for variable "firstName":
-			- (void)setFirstName:(NSString *)aFirstName
-						{
-								if (_firstName != aFirstName)
-								{
-										[_firstName autorelease];
-										_firstName = [aFirstName copy];
-								}
-						}
-
-			- (NSString *)firstName
-						{
-								return (nil == _firstName) ? sPersonDefaultFirstName : _firstName;
-						}
-
-// ad method declararation for variable "lastName":
-			- (void)setLastName:(NSString *)aLastName
-						{
-								if (_lastName != aLastName)
-								{
-										[_lastName autorelease];
-										_lastName = [aLastName copy];
-								}
-						}
-
-			- (NSString *)lastName
-						{
-								return _lastName;
-						}
-
+- (NSMutableArray *)books
+{
+    if (nil == _books)
+    {
+        _books = [NSMutableArray new];
+    }
+    
+    return _books;
+}
 // the directive "#pragma mark" adds a new line to the "Function menu"
 			#pragma mark -
 
-//???			- (NSString *)stringRepresentation
-//						{
-//???									NSString *theCoverTypeStringRepresentahion = self.isPaperback ? @"Paperback": @"Hardcover";
-
-//??								return [NSString stringWithFormat:@"FirstName:%@. LastName:%@.", self.firstName, self.lastName];
-//						}
-
-// the directive "#pragma mark" adds a new line to the "Function menu"
-			#pragma mark -
-
-// ad to return a new array that is a copy of the receiving array for "firstName"
-			+ (NSArray *)personsSortByFirstNameWithSet:(NSSet *)aPersons
+- (NSString *)description
 						{
-								return [aPersons.allObjects sortedArrayUsingSelector:@selector(isEqualByFirstName:)];
+
+								return [NSString stringWithFormat:@"FirstName:%@ LastName:%@.", self.firstName, self.lastName];
 						}
 
-// ad to return a new array that is a copy of the receiving array for "lastName"
-			+ (NSArray *)personSortByLastNameWithSet:(NSSet *)aPersons
-						{
-								return [aPersons.allObjects sortedArrayUsingSelector:@selector(isEqualByLastName:)];
-						}
+- (void)borrowBook:(ITBook *)aBook
+{
+    // add book to array
+    // set book person self
+}
 
-// ad to return a new array that is a copy of the receiving array for "firstName"
-			+ (NSArray *)personsSortByFirstNameWithArray:(NSArray *)aPersons
-						{
-								return [aPersons sortedArrayUsingSelector:@selector(isEqualByFirstName:)];
-						}
+- (void)giveInBook:(ITBook *)aBook
+{
+    //set book person nil
+    // remove from array
+}
 
-// ad to return a new array that is a copy of the receiving array for "lastName"
-			+ (NSArray *)personsSortByLastNameWithArray:(NSArray *)aPersons
-						{
-								return [aPersons sortedArrayUsingSelector:@selector(isEqualByLastName:)];
-						}
-
-// the directive "#pragma mark" adds a new line to the "Function menu"
-			#pragma mark -
-// sorting request for "firstName":
-			- (NSComparisonResult)isEqualByFirstName:(Person *)aPerson
-						{
-								return [self.firstName compare:aPerson.firstName];
-						}
-
-// sorting request for "lastName":
-			- (NSComparisonResult)isEqualByLastName:(Person *)aPerson
-						{
-								return [self.lastName compare:aPerson.lastName];
-						}
 
 			@end
