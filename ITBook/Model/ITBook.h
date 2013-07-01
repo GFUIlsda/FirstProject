@@ -7,7 +7,8 @@
 //
 
 // <challenge the directive #import, shall connect a type library that describes the use of COM interfaces>
-    		#import <Foundation/Foundation.h>
+			#import <Foundation/Foundation.h>
+@class Person;
 
 // <creating a scripted class "ITBook" and ad parents class name "NSObject", you specify the class interface in an @interface...@end>
 			@interface ITBook : NSObject
@@ -18,6 +19,7 @@
 				NSString *_author;
 				NSInteger _year;
 				BOOL _coverType;
+                Person *person;
 			}
 
 // <given the following class declaration>
