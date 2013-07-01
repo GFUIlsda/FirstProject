@@ -15,9 +15,9 @@
 
 // declaration of variables in the project:
 {
-    NSString *_firstName;
-    NSString *_lastName;
-    NSMutableArray *_books;
+	NSString *_firstName;
+	NSString *_lastName;
+	NSMutableArray *_books;
 }
 
 // <given the following class declaration>

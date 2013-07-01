@@ -203,54 +203,53 @@ NSString *const kITBookPaperbackKey = @"paperback";
 // ad to return a new array that is a copy of the receiving array for "year"
 + (NSArray *)booksSortByYearWithSet:(NSSet *)aBooks
 {
-								return [aBooks.allObjects sortedArrayUsingSelector:@selector(isEqualByYear:)];
-						}
+	return [aBooks.allObjects sortedArrayUsingSelector:@selector(isEqualByYear:)];
+}
 
 // ad to return a new array that is a copy of the receiving array for "title"
-			+ (NSArray *)booksSortByTitleWithArray:(NSArray *)aBooks
-						{
-								return [aBooks sortedArrayUsingSelector:@selector(isEqualByTitle:)];
-						}
++ (NSArray *)booksSortByTitleWithArray:(NSArray *)aBooks
+{
+	return [aBooks sortedArrayUsingSelector:@selector(isEqualByTitle:)];
+}
 
 // ad to return a new array that is a copy of the receiving array for "author"
-			+ (NSArray *)booksSortByAuthorWithArray:(NSArray *)aBooks
-						{
-								return [aBooks sortedArrayUsingSelector:@selector(isEqualByAuthor:)];
-						}
++ (NSArray *)booksSortByAuthorWithArray:(NSArray *)aBooks
+{
+	return [aBooks sortedArrayUsingSelector:@selector(isEqualByAuthor:)];
+}
 
 // ad to return a new array that is a copy of the receiving array for "year"
-			+ (NSArray *)booksSortByYearWithArray:(NSArray *)aBooks
-						{
-								return [aBooks sortedArrayUsingSelector:@selector(isEqualByYear:)];
++ (NSArray *)booksSortByYearWithArray:(NSArray *)aBooks
+{
+	return [aBooks sortedArrayUsingSelector:@selector(isEqualByYear:)];
 }
 
 // the directive "#pragma mark" adds a new line to the "Function menu"
-			#pragma mark -
+#pragma mark -
 
 // sorting request for "title":
-			- (NSComparisonResult)isEqualByTitle:(ITBook *)aBook
-						{
-								return [self.title compare:aBook.title];
-						}
+- (NSComparisonResult)isEqualByTitle:(ITBook *)aBook
+{
+	return [self.title compare:aBook.title];
+}
 
 // sorting request for "author":
-			- (NSComparisonResult)isEqualByAuthor:(ITBook *)aBook
-						{
-								return [self.author compare:aBook.author];
-						}
+- (NSComparisonResult)isEqualByAuthor:(ITBook *)aBook
+{
+	return [self.author compare:aBook.author];
+}
 
 // sorting request for "year":
-			- (NSComparisonResult)isEqualByYear:(ITBook *)aBook
-						{
-								if (self.year > aBook.year)
-								{
-										return NSOrderedAscending;
-								}
-								if (self.year < aBook.year)
-								{
-										return NSOrderedDescending;
-								}
-								return NSOrderedSame;
-						}
-
-			@end
+- (NSComparisonResult)isEqualByYear:(ITBook *)aBook
+{
+	if (self.year > aBook.year)
+	{
+		return NSOrderedAscending;
+	}
+	if (self.year < aBook.year)
+	{
+		return NSOrderedDescending;
+	}
+	return NSOrderedSame;
+}
+@end
