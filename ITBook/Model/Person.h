@@ -7,42 +7,42 @@
 //
 
 // <challenge the directive #import, shall connect a type library that describes the use of COM interfaces>
-#import <Foundation/Foundation.h>
+			#import <Foundation/Foundation.h>
 
 // <creating a scripted class "Person" and ad parents class name "NSObject", you specify the class interface in an @interface...@end>
-@interface Person: NSObject
+			@interface Person: NSObject
 
 // declaration of variables in the project:
-{
-	NSString *_firstName;
-	NSString *_lastName;
-}
+			{
+				NSString *_firstName;
+				NSString *_lastName;
+			}
 
 // <given the following class declaration>
-@property (nonatomic, copy) NSString *firstName;
-@property (nonatomic, copy) NSString *lastName;
+			@property (nonatomic, copy) NSString *firstName;
+			@property (nonatomic, copy) NSString *lastName;
 
 // ad processing methods in the project:
-- (id)initWithFirstName:(NSString *)aFirstName;
-- (id)initWithFirstName:(NSString *)aFirstName lastName:(NSString *)aLastName;
+			- (id)initWithFirstName:(NSString *)aFirstName;
+			- (id)initWithFirstName:(NSString *)aFirstName lastName:(NSString *)aLastName;
 
 // <description of pointers to type of information>
-- (void)setFirstName:(NSString *)aFirstName;
-- (NSString *)firstName;
-- (void)setLastName:(NSString *)aLastName;
-- (NSString *)lastName;
+			- (void)setFirstName:(NSString *)aFirstName;
+			- (NSString *)firstName;
+			- (void)setLastName:(NSString *)aLastName;
+			- (NSString *)lastName;
 
 // <ad NSDictionary for need a convenient and efficient way to retrieve data associated with an arbitrary key>
-- (id)initWithDictionaryRepresentation:(NSDictionary *)aDict;
-- (NSDictionary *)dictionaryRepresentation;
+			- (id)initWithDictionaryRepresentation:(NSDictionary *)aDict;
+			- (NSDictionary *)dictionaryRepresentation;
 
-- (NSString *)stringRepresentation;
+			- (NSString *)stringRepresentation;
 
 // sorting the input data:
-+ (NSArray *)booksSortByFirstNameWithSet:(NSSet *)aPersons;
-+ (NSArray *)booksSortByLastNameWithSet:(NSSet *)aPersons;
+			+ (NSArray *)booksSortByFirstNameWithSet:(NSSet *)aPersons;
+			+ (NSArray *)booksSortByLastNameWithSet:(NSSet *)aPersons;
 
-+ (NSArray *)booksSortByFirstNameWithArray:(NSArray *)aPersons;
-+ (NSArray *)booksSortByLastNameWithArray:(NSArray *)aPersons;
+			+ (NSArray *)booksSortByFirstNameWithArray:(NSArray *)aPersons;
+			+ (NSArray *)booksSortByLastNameWithArray:(NSArray *)aPersons;
 
-@end
+			@end
