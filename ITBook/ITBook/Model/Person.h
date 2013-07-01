@@ -29,8 +29,8 @@
 - (id)initWithFirstName:(NSString *)aFirstName lastName:(NSString *)aLastName;
 
 // <ad NSDictionary for need a convenient and efficient way to retrieve data associated with an arbitrary key>
-			- (id)initWithDictionaryRepresentation:(NSDictionary *)aDict;
-			- (NSDictionary *)dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(NSDictionary *)aDict;
+- (NSDictionary *)dictionaryRepresentation;
 
 - (void)borrowBook:(ITBook *)aBook;
 - (void)giveInBook:(ITBook *)aBook;
