@@ -107,13 +107,16 @@
 - (void)borrowBook:(ITBook *)aBook
 {
     // add book to array
+    [self.books addObject:aBook];
     // set book person self
+
 }
 
 - (void)giveInBook:(ITBook *)aBook
 {
-    //set book person nil
+    //set bosok person nil
     // remove from array
+    [self.books removeObject:aBook];
 }
 
 

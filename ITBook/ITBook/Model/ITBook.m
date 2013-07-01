@@ -22,7 +22,7 @@
 			@implementation ITBook
 
 // <compiler directive to ask the compiler to generate the methods according to the specification in the declaration>
-			@synthesize title = _title, author = _author, year = _year, hardcover = _hardcover;
+			@synthesize title = _title, author = _author, year = _year, hardcover = _hardcover, person = _person;
 
 // ad method declararation for variable "title":
 			- (id)initWithTitle:(NSString *)aTitle

@@ -32,7 +32,7 @@ int main(int argc, const char * argv[])
 		 
 // start sorting:
 // basic headline "Info" on the screen:
-			printf("\nTest ITBook: Info - ok\n\n");
+			printf("\nTest ITBook: Info - ok \n\n");
 		
 // sorting through the collection with all information "Info":
 			NSArray *theBooksCollection = @[theFirstBook, theSecondBook, theThirdBook, theFourthBook, theFirstBook];
@@ -84,17 +84,18 @@ int main(int argc, const char * argv[])
 			NSLog(@"\n\nITBook: - ok\n----------\n%@\n==========\n%@\n----------\n", theFirstBook.stringRepresentation, theSixBook.stringRepresentation);
 				  
 	}
+    
+    //	{
+    //Person
+    //		// Вводим новые три пользователя со следующими данными (согласно объявлеными ранее переменными в Person.h):
+    //Person *theFirstPerson = [[Person alloc] initWithFirstName:@"George" LastName: @"Soros"];
+    //		Person *theThirdPerson = [[Person alloc] initWithFirstName:@"Warren" LastName: @"Buffett"];
+    //
+    //		printf("Test Person: Short List - ok\n\n");
+    //
+    //		NSLog(@"\n%@\n%@", theFirstPerson.stringRepresentation, theThirdPerson.stringRepresentation);
+    //	}
+    
 	return 0;
 }
 
-//	{
-		//Person
-		// Вводим новые три пользователя со следующими данными (согласно объявлеными ранее переменными в Person.h):
-//		Person *theFirstPerson = [[Person alloc] initWithFirstName:@"George" LastName: @"Soros"];
-//		Person *theThirdPerson = [[Person alloc] initWithFirstName:@"Warren" LastName: @"Buffett"];
-		
-//		printf("Test Person: Short List - ok\n\n");
-		
-//		NSLog(@"\n%@\n%@", theFirstPerson.stringRepresentation, theThirdPerson.stringRepresentation);
-		
-//	}
