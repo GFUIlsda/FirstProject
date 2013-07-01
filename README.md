@@ -1,3 +1,4 @@
-All changes to date.
-- unassigned class "Person"
-consequently does not derive a compiler without any modifications.
+Recent changes were made after 21:00 (13/07/01)
+In repository:
+- Archive file "ITBook.zip"
+- Over the paging folder "ITBook"
