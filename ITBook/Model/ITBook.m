@@ -18,30 +18,31 @@ NSString *const kITBookAuthorKey = @"author";
 NSString *const kITBookYearKey = @"year";
 NSString *const kITBookPaperbackKey = @"paperback";
 
-
+//* <These directives provide the scoping information the compiler needs to associate the enclosed methods with the corresponding class. A method’s definition therefore matches its corresponding declaration in the interface, except for the inclusion of a code block.> *//
 @implementation ITBook
 
-//описание работы методов в проекте (пистолет прилагается)
-
-//НОВОЕ!!!
+// <compiler directive to ask the compiler to generate the methods according to the specification in the declaration>
 @synthesize title = _title, author = _author, year = _year, hardcover = _hardcover;
-//Закрытие НОВОГО!!!
 
+// ad method declararation for variable "title":
 - (id)initWithTitle:(NSString *)aTitle
 {
     return [self initWithTitle:aTitle author:nil year:0 paperback:NO];
 }
 
+// ad method declararation for variable "author":
 - (id)initWithTitle:(NSString *)aTitle author:(NSString *)anAuthor
 {
     return [self initWithTitle:aTitle author:anAuthor year:0 paperback:NO];
 }
 
+// ad method declararation for variable "year":
 - (id)initWithTitle:(NSString *)aTitle author:(NSString *)anAuthor year:(NSInteger)aYear
 {
     return [self initWithTitle:aTitle author:anAuthor year:0 paperback:NO];
 }
 
+// ad method declararation for variable "coverType":
 - (id)initWithTitle:(NSString *)aTitle author:(NSString *)anAuthor year:(NSInteger)aYear paperback:(BOOL)aCoverType
 {
     self = [super init];
@@ -55,9 +56,10 @@ NSString *const kITBookPaperbackKey = @"paperback";
     return self;
 }
 
-//НОВОЕ!!!
+//the directive "#pragma mark" adds a new line to the "Function menu"
 #pragma mark -
 
+// ad method declararation for variable "dict":
 - (id)initWithDictionaryRepresentation:(NSDictionary *)aDict
 {
 	self = [super init];
@@ -72,6 +74,7 @@ NSString *const kITBookPaperbackKey = @"paperback";
 	return self;
 }
 
+// ad method declararation for variable "representation":
 - (NSDictionary *)dictionaryRepresentation
 {
 	NSMutableDictionary *theRepresentation = [NSMutableDictionary dictionary];
@@ -91,9 +94,8 @@ NSString *const kITBookPaperbackKey = @"paperback";
 	
 	return [[theRepresentation copy] autorelease];
 }
-//Закрытие НОВОЕ!!!
 
-
+// free the memory:
 - (void)dealloc
 {
     [_title release];
@@ -102,8 +104,10 @@ NSString *const kITBookPaperbackKey = @"paperback";
     [super dealloc];
 }
 
-
+//the directive "#pragma mark" adds a new line to the "Function menu"
 #pragma mark -
+
+// ad method declararation for variable "title":
 - (void)setTitle:(NSString *)aTitle
 {
     if (_title != aTitle)
@@ -118,6 +122,8 @@ NSString *const kITBookPaperbackKey = @"paperback";
     return (nil == _title) ? sITBookDefaultTitle : _title;
 }
 
+
+// ad method declararation for variable "author":
 - (void)setAuthor:(NSString *)anAuthor
 {
     if (_author != anAuthor)
@@ -132,6 +138,7 @@ NSString *const kITBookPaperbackKey = @"paperback";
     return _author;
 }
 
+// ad method declararation for variable "year":
 - (void)setYear:(NSInteger)aYear
 {
     if (_year != aYear)
@@ -140,12 +147,13 @@ NSString *const kITBookPaperbackKey = @"paperback";
     }
 }
 
+
 - (NSInteger)year
 {
     return _year;
 }
 
-
+// ad method declararation for variable "paperBack":
 - (void)setPaperback:(BOOL)isPaperback
 {
     if (_coverType != isPaperback)
@@ -159,6 +167,7 @@ NSString *const kITBookPaperbackKey = @"paperback";
     return _coverType;
 }
 
+// ad method declararation for variable "hardCover":
 - (void)setHardcover:(BOOL)isHardcover
 {
     if (_coverType == isHardcover)
@@ -172,7 +181,10 @@ NSString *const kITBookPaperbackKey = @"paperback";
     return !_coverType;
 }
 
+//the directive "#pragma mark" adds a new line to the "Function menu"
 #pragma mark -
+
+// ad method declararation for variable "representation":
 - (NSString *)stringRepresentation
 {
     NSString * theCoverTypeStringRepresentahion = self.isPaperback ? @"Paperback": @"Hardcover";
@@ -180,49 +192,61 @@ NSString *const kITBookPaperbackKey = @"paperback";
 	return [NSString stringWithFormat:@"Title:%@. Author:%@. Year:%ld. Covertype:%@.", self.title, nil == self.author ? sITBookDefaultAuthor : self.author , self.year, theCoverTypeStringRepresentahion];
 }
 
+//the directive "#pragma mark" adds a new line to the "Function menu"
 #pragma mark -
 
+// ad to return a new array that is a copy of the receiving array for "title"
 + (NSArray *)booksSortByTitleWithSet:(NSSet *)aBooks
 {
     return [aBooks.allObjects sortedArrayUsingSelector:@selector(isEqualByTitle:)];
 }
 
+// ad to return a new array that is a copy of the receiving array for "author"
 + (NSArray *)booksSortByAuthorWithSet:(NSSet *)aBooks
 {
     return [aBooks.allObjects sortedArrayUsingSelector:@selector(isEqualByAuthor:)];
 }
 
+// ad to return a new array that is a copy of the receiving array for "year"
 + (NSArray *)booksSortByYearWithSet:(NSSet *)aBooks
 {
     return [aBooks.allObjects sortedArrayUsingSelector:@selector(isEqualByYear:)];
 }
 
+// ad to return a new array that is a copy of the receiving array for "title"
 + (NSArray *)booksSortByTitleWithArray:(NSArray *)aBooks
 {
     return [aBooks sortedArrayUsingSelector:@selector(isEqualByTitle:)];
 }
 
+// ad to return a new array that is a copy of the receiving array for "author"
 + (NSArray *)booksSortByAuthorWithArray:(NSArray *)aBooks
 {
     return [aBooks sortedArrayUsingSelector:@selector(isEqualByAuthor:)];
 }
 
+// ad to return a new array that is a copy of the receiving array for "year"
 + (NSArray *)booksSortByYearWithArray:(NSArray *)aBooks
 {
      return [aBooks sortedArrayUsingSelector:@selector(isEqualByYear:)];
 }
 
+//the directive "#pragma mark" adds a new line to the "Function menu"
 #pragma mark -
+
+// sorting request for "title":
 - (NSComparisonResult)isEqualByTitle:(ITBook *)aBook
 {
     return [self.title compare:aBook.title];
 }
 
+// sorting request for "author":
 - (NSComparisonResult)isEqualByAuthor:(ITBook *)aBook
 {
     return [self.author compare:aBook.author];
 }
 
+// sorting request for "year":
 - (NSComparisonResult)isEqualByYear:(ITBook *)aBook
 {
     if (self.year > aBook.year)
