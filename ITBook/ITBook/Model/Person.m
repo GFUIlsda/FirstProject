@@ -103,14 +103,15 @@ NSString *const kPersonLastNameKey = @"lastName";
     // add book to array
     [self.books addObject:aBook];
   
-	// set book person self  ?????
-	[self.books setObject:aBook atIndexedSubscript:0];
+	// set book person self
+	aBook.person = self;
 }
 
 - (void)giveInBook:(ITBook *)aBook
 {
     //set book person nil ?????
-	[self.books setObject:aBook atIndexedSubscript:0];
+	aBook.person = nil;
+	
     // remove from array
     [self.books removeObject:aBook];
 }

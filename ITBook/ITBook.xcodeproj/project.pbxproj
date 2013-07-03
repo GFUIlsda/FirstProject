@@ -12,6 +12,7 @@
 		D022994E176B3428006E9A64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D022994D176B3428006E9A64 /* main.m */; };
 		D0229952176B3428006E9A64 /* ITBook.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D0229951176B3428006E9A64 /* ITBook.1 */; };
 		D022995A176B3484006E9A64 /* ITBook.m in Sources */ = {isa = PBXBuildFile; fileRef = D0229959176B3484006E9A64 /* ITBook.m */; };
+		D0D6D11C1784D6B7005EF2FF /* ITLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D6D11B1784D6B7005EF2FF /* ITLibrary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		D0229951176B3428006E9A64 /* ITBook.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ITBook.1; sourceTree = "<group>"; };
 		D0229958176B3484006E9A64 /* ITBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITBook.h; path = ITBook/Model/ITBook.h; sourceTree = SOURCE_ROOT; };
 		D0229959176B3484006E9A64 /* ITBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITBook.m; path = ITBook/Model/ITBook.m; sourceTree = SOURCE_ROOT; };
+		D0D6D11A1784D6B7005EF2FF /* ITLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITLibrary.h; path = Model/ITLibrary.h; sourceTree = "<group>"; };
+		D0D6D11B1784D6B7005EF2FF /* ITLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITLibrary.m; path = Model/ITLibrary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,8 @@
 		D00E8A8B177F3487001BF2D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0D6D11A1784D6B7005EF2FF /* ITLibrary.h */,
+				D0D6D11B1784D6B7005EF2FF /* ITLibrary.m */,
 				D0229958176B3484006E9A64 /* ITBook.h */,
 				D0229959176B3484006E9A64 /* ITBook.m */,
 				D00E8A8C177F60F4001BF2D4 /* Person.h */,
@@ -160,6 +165,7 @@
 				D022994E176B3428006E9A64 /* main.m in Sources */,
 				D022995A176B3484006E9A64 /* ITBook.m in Sources */,
 				D00E8A8E177F60F4001BF2D4 /* Person.m in Sources */,
+				D0D6D11C1784D6B7005EF2FF /* ITLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
