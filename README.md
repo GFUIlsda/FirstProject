@@ -1,4 +1,4 @@
-Recent changes were made after 11:00 (13/07/03)
+Recent changes were made after 17:30 (13/07/03)
 
 The repository has:
 - Archive file "ITBook.zip" - archived before and after the course, the date and time of download;
