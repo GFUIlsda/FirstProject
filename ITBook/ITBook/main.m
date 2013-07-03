@@ -67,7 +67,7 @@ for(ITBook *theBook in theBookSortedByAuthor)
 }
 		
 // basic headline "Year" on the screen:
-printf("\nTest ITBook: Year - ok\n\n");
+printf("\nTesкаt ITBook: Year - ok\n\n");
 				  
 // sorting through the collection with all information "Year":
 NSArray *theBooksSortedByYear = [ITBook booksSortByYearWithSet:theBooksSet];
@@ -83,18 +83,16 @@ ITBook *theSixBook = [[ITBook alloc] initWithDictionaryRepresentation:theDiction
 				  
 NSLog(@"\n\nITBook: - ok\n----------\n%@\n==========\n%@\n----------\n", theFirstBook.stringRepresentation, theSixBook.stringRepresentation);
 	}
-    
-    //	{
-    //Person
-    //		// Вводим новые три пользователя со следующими данными (согласно объявлеными ранее переменными в Person.h):
-    //Person *theFirstPerson = [[Person alloc] initWithFirstName:@"George" LastName: @"Soros"];
-    //		Person *theThirdPerson = [[Person alloc] initWithFirstName:@"Warren" LastName: @"Buffett"];
-    //
-    //		printf("Test Person: Short List - ok\n\n");
-    //
-    //		NSLog(@"\n%@\n%@", theFirstPerson.stringRepresentation, theThirdPerson.stringRepresentation);
-    //	}
-	
+/*	
+ {
+// Вводим новые три пользователя со следующими данными (согласно объявлеными ранее переменными в Person.h):
+
+Person *theFirstPerson = [[Person alloc] initWithFirstName:@"George" LastName: @"Soros"];
+Person *theSecondPerson = [[Person alloc] initWithFirstName:@"Warren" LastName: @"Buffett"];
+
+printf("Test Person: Short List - ok\n\n");
+	}
+*/	
 	return 0;
 }
 
