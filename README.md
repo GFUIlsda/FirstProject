@@ -4,7 +4,8 @@ more information: vk.com/itstepschool
 -------------------------------------
 
 The repository has:
-- Archive file "ITBook.zip" - archived before and after the course, the date and time of upload;
+
+- Archive file "ITBook.zip" - been archived before and after the course "iOS", made the date and time of upload;
 - Individual pages "ITBook" - my current work in XCode, updates are specified in the repository to the right of the file description
 
-The file ". DS Store" maintains a history of changes and is present in every directory
+Attention! The file ". DS Store" maintains a history of changes and is present in every directory
