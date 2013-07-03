@@ -1,4 +1,5 @@
 more information: vk.com/itstepschool
+-------------------------------------
 
 Recent changes were made after 17:30 (13/07/03)
 
