@@ -1,4 +1,4 @@
-Recent changes were made after 02:00 (04-07-13)
+Recent changes were made after 02:00 v (04-07-13)
 
 more information: vk.com/itstepschool
 -------------------------------------
