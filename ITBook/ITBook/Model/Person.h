@@ -11,7 +11,7 @@
 @class ITBook;
 
 // <creating a scripted class "Person" and ad parents class name "NSObject", you specify the class interface in an @interface...@end>
-			@interface Person: NSObject
+@interface Person: NSObject
 
 // declaration of variables in the project:
 {
