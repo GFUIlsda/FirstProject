@@ -60,7 +60,7 @@ NSString *const kLibraryPersonsKey = @"persons";
 	}
 	return self;
 }
-*/ 
+*/
 
 // ad method declararation for variable "representation":
 - (NSDictionary *)dictionaryRepresentation
