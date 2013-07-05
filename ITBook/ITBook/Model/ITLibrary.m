@@ -11,8 +11,8 @@
 #import "ITBook.h"
 #import "Person.h"
 
-NSString *const kLibraryBooksKey = @"books";
-NSString *const kLibraryPersonsKey = @"persons";
+NSString *const kITLibraryBooksKey = @"books";
+NSString *const kITLibraryPersonsKey = @"persons";
 
 //* <These directives provide the scoping information the compiler needs to associate the enclosed methods with the corresponding class. A method’s definition therefore matches its corresponding declaration in the interface, except for the inclusion of a code block.> *//
 @implementation ITLibrary
@@ -47,20 +47,19 @@ NSString *const kLibraryPersonsKey = @"persons";
 // the directive "#pragma mark" adds a new line to the "Function menu"
 #pragma mark -
 
-/*
+
 // ad method declararation for variable "dict":
 - (id)initWithDictionaryRepresentation:(NSDictionary *)aDict
 {
 	self = [super init];
 	if (self)
 	{
-		self.books = [aDict objectForKey:kLibraryBooksKey];
-		self.persons = [aDict objectForKey:kLibraryPersonsKey];
 		[self.books addObjectsFromArray:[aDict objectForKey:@"books"]];
+		[self.persons addObjectsFromArray:[aDict objectForKey:@"persons"]];
 	}
 	return self;
 }
-*/
+
 
 // ad method declararation for variable "representation":
 - (NSDictionary *)dictionaryRepresentation
@@ -68,11 +67,11 @@ NSString *const kLibraryPersonsKey = @"persons";
 	NSMutableDictionary *theRepresentation = [NSMutableDictionary dictionary];
 	if (nil != self.self.books)
 	{
-		[theRepresentation setObject:self.books forKey:kLibraryBooksKey];
+		[theRepresentation setObject:self.books forKey:kITLibraryBooksKey];
 	}
 	if (nil != self.persons)
 	{
-		[theRepresentation setObject:self.persons forKey:kLibraryPersonsKey];
+		[theRepresentation setObject:self.persons forKey:kITLibraryPersonsKey];
 	}
 	return [[theRepresentation copy] autorelease];
 }
