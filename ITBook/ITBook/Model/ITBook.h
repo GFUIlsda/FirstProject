@@ -41,7 +41,7 @@
 			- (id)initWithDictionaryRepresentation:(NSDictionary *)aDict;
 			- (NSDictionary *)dictionaryRepresentation;
 
-			- (NSString *)stringRepresentation;
+			- (NSString *)stringRepresentation; 
 
 // sorting the input data:
 			+ (NSArray *)booksSortByTitleWithSet:(NSSet *)aBooks;
